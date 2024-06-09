@@ -2,37 +2,68 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+@keyframes aniVertical {
+  0% {
+    opacity: 0;
+  }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.datagrid {
+  animation: aniVertical 3s ease;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  opacity: 0;
+
+  &:nth-child(2) {
+    animation-delay: .5s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 1s;
+  }
+}
+
+.card {
+  border: darkgray 1px solid;
+  margin: 1rem;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+.header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+
+.fecha {
+  padding: 0 0.5rem;
+  font-size: smaller;
+}
+
+.publisher {
+  border: rgba(46, 45, 43, 0.961) 1px solid;
+  border-radius: 5px;
+  background-color: rgba(46, 45, 43, 0.961);
+  font-size: smaller;
   color: white;
+  width: fit-content;
+  padding: 0 0.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:visited {
+  color: darkgray;
 }
